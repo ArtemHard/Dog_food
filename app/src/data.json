@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "name": "желудки куринные",
+        "price":550,
+        "picture": "https://react-learning.ru/image-compressed/1.jpg",
+        "stock": 12
+    }
+    ,
+    {
+        "id": 2,
+        "name": "желудки свинные",
+        "price":550,
+        "picture": "https://react-learning.ru/image-compressed/2.jpg",
+        "stock": 5
+
+    }
+    ,
+    {
+        "id": 3,
+        "name": "желудки говяжьи",
+        "price":550,
+        "picture": "https://react-learning.ru/image-compressed/3.jpg",
+        "stock": 35
+    }
+    ,
+    {
+        "id": 4,
+        "name": "желудки свинячие",
+        "price":550,
+        "picture": "https://react-learning.ru/image-compressed/4.jpg",
+        "stock": 5
+
+    }
+    ,
+    {
+        "id": 5,
+        "name": "желудки поросячие",
+        "price":550,
+        "picture": "https://react-learning.ru/image-compressed/5.jpg",
+        "stock": 5
+
+    }
+    ,
+    {
+        "id": 6,
+        "name": "желудки бродячие",
+        "price":550,
+        "picture": "https://react-learning.ru/image-compressed/6.jpg",
+        "stock": 60
+
+    }
+    
+]

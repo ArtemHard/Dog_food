@@ -1,0 +1,26 @@
+/*
+ width = 1440px (desktop)
+ padding-x = 224 (448)
+*/
+
+footer {
+    background-color: #FFE44D;
+}
+footer.container {
+    display: flex;
+    justify-content: space-between;
+}
+footer ul {
+    list-style: none;
+}
+footer>* {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.soc {
+    display: flex;
+    gap: 10px;
+}
