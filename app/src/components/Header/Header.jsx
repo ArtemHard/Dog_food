@@ -2,13 +2,18 @@ import style from './Header.module.css'
 import Logo from '../Logo/Logo.jsx'
 import SearchForm from '../SearchForm/SearchForm'
 
-const Header = () => {
+const Header = ({searchText, appHeandlerText}) => {
 
+    const SearchHandlerHeader = (inputValue) => {
+        console.log('Header>>>>', inputValue);
+        appHeandlerText(inputValue)
+    }
+    
     return (
         <header>
             <div className='container'>
                 <Logo />
-                <SearchForm />
+                <SearchForm searchText={searchText} SearchHandlerHeader={SearchHandlerHeader} />
                 <nav>
                     <a href="">pic 1</a>
                     <a href="">pic 2</a>

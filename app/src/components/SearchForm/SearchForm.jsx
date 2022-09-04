@@ -3,11 +3,12 @@ import "./index.css";
 import srchIcon from "./img/SearchIcon.svg";
 import closeIcon from "./img/close.svg";
 
-const SearchForm = (searchText) => {
-  const [search, setSearch] = useState('');
+const SearchForm = ({searchText, SearchHandlerHeader}) => {
+  const [search, setSearch] = useState(searchText);
 
-  const SubmitHandler = (e) => {
+  const SearchHandler = (e) => {
     setSearch(e.target.value);
+    SearchHandlerHeader(e.target.value)
   };
 
   return (
@@ -15,11 +16,11 @@ const SearchForm = (searchText) => {
       <input
         type='text'
         placeholder='Поиск товара'
-        onSubmit={SubmitHandler}
+        onChange={SearchHandler}
         className='SearchForm__input'
       />
       <button className='SearchForm__btn'>
-        {searchText === '' ? <img className="SearchForm__btn__srchIcon" src={srchIcon} alt="search icon" /> : <img className="SearchForm__btn__closeIcon" src={closeIcon} alt="close search form" /> }
+        {search === '' ? <img className="SearchForm__btn__srchIcon" src={srchIcon} alt="search icon" /> : <img className="SearchForm__btn__closeIcon" src={closeIcon} alt="close search form" /> }
       </button>
     </form>
   );

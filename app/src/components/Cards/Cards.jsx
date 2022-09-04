@@ -1,11 +1,11 @@
 import Card from "../Card/Card";
-import data from '../../data.json';
 
 
-const Cards = () => {
+
+const Cards = ({goods}) => {
     return (
         <div className="container">
-            { data.map(el => <Card {...el} key={el.id}/>) }
+            { goods.map(el => <Card {...el} key={el.id}/>) }
             
         </div>
     )

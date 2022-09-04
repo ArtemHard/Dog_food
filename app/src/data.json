@@ -50,5 +50,14 @@
         "stock": 60
 
     }
+    ,
+    {
+        "id": 7,
+        "name": "желудки собачие",
+        "price":650,
+        "picture": "https://react-learning.ru/image-compressed/7.jpg",
+        "stock": 13
+
+    }
     
 ]
