@@ -1,0 +1,42 @@
+.SearchForm {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.SearchForm__input {
+    width: 100%;
+    border-radius: 24px;
+    border-style: none;
+    outline: none;
+    font-size: 16px;
+    padding: 12px 20px;
+    background-color: #eee44d;
+}
+
+.SearchForm__input:focus {
+    background-color: #fff;
+    border: 1px solid;
+}
+
+.SearchForm__btn {
+    position: absolute;
+    right: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    padding: 0px;
+
+}
+
+.SearchForm__btn__srchIcon {
+    height: 24px;
+    width: 24px;
+}
+
+.SearchForm__btn__closeIcon {
+    height: 24px;
+    width:24px;
+}
