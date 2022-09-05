@@ -1,14 +1,14 @@
 import Card from "../Card/Card";
 
+const Cards = ({ goods }) => {
+  console.log(goods);
+  return (
+    <div className='container'>
+      {goods.map((el) => (
+        <Card {...el} key={el._id} />
+      ))}
+    </div>
+  );
+};
 
-
-const Cards = ({goods}) => {
-    return (
-        <div className="container">
-            { goods.map(el => <Card {...el} key={el.id}/>) }
-            
-        </div>
-    )
-}
-
-export default Cards
+export default Cards;

@@ -3,13 +3,15 @@ import "./index.css";
 import srchIcon from "./img/SearchIcon.svg";
 import closeIcon from "./img/close.svg";
 
-const SearchForm = ({searchText, SearchHandlerHeader}) => {
-  const [search, setSearch] = useState(searchText);
+const SearchForm = ({SearchHandlerHeader}) => {
+  const [search, setSearch] = useState('');
 
   const SearchHandler = (e) => {
     setSearch(e.target.value);
     SearchHandlerHeader(e.target.value)
   };
+
+
 
   return (
     <form className='SearchForm'>

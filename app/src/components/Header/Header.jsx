@@ -1,11 +1,9 @@
-import style from './Header.module.css'
 import Logo from '../Logo/Logo.jsx'
 import SearchForm from '../SearchForm/SearchForm'
 
 const Header = ({searchText, appHeandlerText}) => {
 
     const SearchHandlerHeader = (inputValue) => {
-        console.log('Header>>>>', inputValue);
         appHeandlerText(inputValue)
     }
     

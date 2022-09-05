@@ -1,0 +1,5 @@
+.SearchTextResult {
+    display: flex;
+    justify-content: center;
+    padding: 20px calc(50% - 500px);
+}
