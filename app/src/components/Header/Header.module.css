@@ -1,0 +1,16 @@
+.navigationBar {
+    display: flex;
+    gap: 10px;
+}
+.navigation_profileIcon {
+    height: 24px;
+    width: 24px;
+}
+.navigation_shoppingCartIcon {
+    height: 24px;
+    width: 24px;
+}
+.navigation_favoriteIcon {
+    height: 24px;
+    width: 24px;
+}

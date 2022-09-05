@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
+import {  Routes, Route } from "react-router-dom";
 import api from "./Api";
-import Cards from "./components/Cards/Cards";
+
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import SearchResult from "./components/SearchResult/SearchResult";
+import Cart from "./pages/Cart";
+import Catalog from "./pages/Catalog";
+import Contacts from "./pages/Contacts";
+import Favorites from "./pages/Favorites";
+import Main from "./pages/Main";
+import Product from "./pages/Product";
+import Profile from "./pages/Profile";
+
 
 const App = () => {
 
@@ -23,7 +31,6 @@ const App = () => {
 
   useEffect(() => {
     api.getProductList().then(ans => {
-      console.log(ans.products);
       setData(ans.products)
       setGoods(ans.products)
     })
@@ -35,8 +42,17 @@ const App = () => {
   return (
     <>
       <Header appHeandlerText={appHeandlerText} />
-      <SearchResult request={request} amount={amount} />
-      <Cards goods={data} />
+      <main>
+        <Routes>
+          <Route path="/" element={<Main name="Главная" />} /> 
+            <Route path="/catalog" element={<Catalog name="Каталог" request={request} amount={amount} data={data} />} />
+            <Route path="/favorites" element={<Favorites name="Избранное" />} />
+            <Route path="/cart" element={<Cart name="Корзина" />} />
+            <Route path="/product" element={<Product name="Товар" />} />
+            <Route path="/profile" element={<Profile name="Личный кабинет" />} />
+            <Route path="/contacts" element={<Contacts name="Контакты" />} />
+        </Routes>
+      </main>
       <Footer />
     </>
   );

@@ -1,10 +1,9 @@
 import Card from "../Card/Card";
 
-const Cards = ({ goods }) => {
-  console.log(goods);
+const Cards = ({ data }) => {
   return (
     <div className='container'>
-      {goods.map((el) => (
+      {data.map((el) => (
         <Card {...el} key={el._id} />
       ))}
     </div>
