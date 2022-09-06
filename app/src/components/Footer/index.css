@@ -8,6 +8,7 @@ footer.container {
 }
 footer ul {
     list-style: none;
+    
 }
 footer>* {
     margin: 0;
@@ -16,7 +17,23 @@ footer>* {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.foooterContainer__column__link {
+    transition: 0.3s ease; 
+}
+.foooterContainer__column__link:hover 
+{
+     color:#00A0C6; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
 .soc {
     display: flex;
+    justify-content: center;
     gap: 10px;
+    padding: 0;
+}
+.soc__imgLogo {
+    height: 24px;
+    width: 24px;
 }

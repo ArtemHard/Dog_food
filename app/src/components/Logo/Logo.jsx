@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from './flower-48px.png'
+import logo from './img/dog-face.svg'
 
 const Logo = () => {
 

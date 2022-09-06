@@ -18,19 +18,16 @@ const Header = ({searchText, appHeandlerText}) => {
                 <Logo />
                 <SearchForm searchText={searchText} SearchHandlerHeader={SearchHandlerHeader} />
                 <nav className={style.navigationBar}>
-                    {/* <Link  to="/">Главная</Link> */}
-                    {/* <Link  to="/catalog">Каталог</Link> */}
                     <Link  to="/favorites">
                         <img className={style.navigation_favoriteIcon} src={favorite} alt="favorite icon"/>
                     </Link>
                     <Link  to="/cart">
                         <img className={style.navigation_shoppingCartIcon} src={shoppingCart} alt="shopping cart icon"/>
                     </Link>
-                    {/* <Link  to="/product">Товар</Link> */}
+                    
                     <Link  to="/profile">
                         <img className={style.navigation_profileIcon} src={profile} alt="profile icon"/>
                     </Link>
-                    {/* <Link  to="/contacts">Контакты</Link> */}
                 </nav>
 
             </div>

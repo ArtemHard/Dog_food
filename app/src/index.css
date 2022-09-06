@@ -12,9 +12,18 @@ code {
     monospace;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   padding: 20px calc(50% - 500px);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+}
+
+main {
+  padding: 20px calc(50% - 500px);
 }
