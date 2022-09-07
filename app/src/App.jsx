@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import {  Routes, Route } from "react-router-dom";
 import api from "./Api";
-
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Cart from "./pages/Cart";

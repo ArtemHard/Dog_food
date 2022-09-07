@@ -14,3 +14,23 @@
     height: 24px;
     width: 24px;
 }
+.navigation__btn__signIn {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении */
+    cursor: pointer;
+}
+.navigation__btn__signUp {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении */
+    cursor: pointer;
+}

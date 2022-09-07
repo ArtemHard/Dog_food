@@ -1,0 +1,53 @@
+.modal__form {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 10% 30%;
+    
+}
+.modal__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+    border: 1px solid #777;
+    padding: 20px 20px;
+    border-radius: 16px;    
+    gap: 10px;
+}
+.modal__inner__btnConfirm {
+    background-color: #f5c425; 
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 24px;
+    transition: 0.3s ease;
+}
+.modal__inner__btnConfirm:hover {
+    background-color:#7bc5d8; 
+    text-decoration:none; 
+    cursor:pointer; 
+}
+.modal__inner__textLogIn {
+    margin: 0;
+}
+
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #f5c425;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 0 3px #7bc5d8;
+  }
