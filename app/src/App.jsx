@@ -11,7 +11,7 @@ import Catalog from "./pages/Catalog";
 import Contacts from "./pages/Contacts";
 import Favorites from "./pages/Favorites";
 import Main from "./pages/Main";
-import Product from "./pages/Product";
+import Product from "./pages/Product/Product";
 import Profile from "./pages/Profile";
 
 const App = () => {
@@ -20,6 +20,7 @@ const App = () => {
   const [request, setRequest] = useState("");
   const [amount, setAmount] = useState("");
   const [modalActiv, setModalActiv] = useState(false);
+  const [store, setStore] = useState([]);
 
   const appHeandlerText = (textFromSearchForm) => {
     const newCards = goods.filter((el) =>
@@ -43,6 +44,7 @@ const App = () => {
         appHeandlerText={appHeandlerText}
         modalActiv={modalActiv}
         setModalActiv={setModalActiv}
+        store={store}
       />
       <main>
         <Routes>
@@ -60,7 +62,10 @@ const App = () => {
           />
           <Route path='/favorites' element={<Favorites name='Избранное' />} />
           <Route path='/cart' element={<Cart name='Корзина' />} />
-          <Route path='/product' element={<Product name='Товар' />} />
+          <Route
+            path='/product/:id'
+            element={<Product store={store} setStore={setStore} name='Товар' />}
+          />
           {/* <Route path="/profile" element={<Profile name="Личный кабинет" />} /> */}
           {/* <Route
             path='/profile/signup'

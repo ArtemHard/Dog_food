@@ -3,8 +3,16 @@ import { useState } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-  const CountInc = () => setCount(count + 1);
-  const CountDec = () => setCount (count - 1);
+  const CountInc = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCount(count + 1);
+  };
+  const CountDec = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCount(count - 1);
+  };
 
   return (
     <>
