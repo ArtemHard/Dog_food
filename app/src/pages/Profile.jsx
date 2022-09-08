@@ -1,7 +1,9 @@
+import SignIn from "../components/Auth/SignIn/SignIn"
+
 const Profile = (props) => {
 
     return (
-        <div>{props.name}</div>
+        <SignIn />
     )
 }
 

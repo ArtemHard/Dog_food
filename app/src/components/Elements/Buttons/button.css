@@ -1,0 +1,12 @@
+.btn {
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #cfd8dc;
+    background-color: transparent;
+    padding: 0px 20px;
+}
+
+.btn.yellow {
+    background-color: #FFE44D;
+    border-color: #FFE44D;
+}

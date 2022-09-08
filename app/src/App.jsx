@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import api from "./Api";
+import SignIn from "./components/Auth/SignIn/SignIn";
+import SignUp from "./components/Auth/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
+import Modal from "./components/Modal/Modal";
 import Cart from "./pages/Cart";
 import Catalog from "./pages/Catalog";
 import Contacts from "./pages/Contacts";
@@ -11,48 +14,64 @@ import Main from "./pages/Main";
 import Product from "./pages/Product";
 import Profile from "./pages/Profile";
 
-
 const App = () => {
-
-
-  const [goods, setGoods] = useState([])
-  const [data, setData] = useState([])
-  const [request, setRequest] = useState('')
-  const [amount, setAmount] = useState('')
-
+  const [goods, setGoods] = useState([]);
+  const [data, setData] = useState([]);
+  const [request, setRequest] = useState("");
+  const [amount, setAmount] = useState("");
+  const [modalActiv, setModalActiv] = useState(false);
 
   const appHeandlerText = (textFromSearchForm) => {
-    const newCards = goods.filter(el => el.name.toLowerCase().includes(textFromSearchForm.toLowerCase().trim()))
-    setRequest(textFromSearchForm)
-    setAmount(newCards.length)
-    setData(newCards)
-  }
+    const newCards = goods.filter((el) =>
+      el.name.toLowerCase().includes(textFromSearchForm.toLowerCase().trim())
+    );
+    setRequest(textFromSearchForm);
+    setAmount(newCards.length);
+    setData(newCards);
+  };
 
   useEffect(() => {
-    api.getProductList().then(ans => {
-      setData(ans.products)
-      setGoods(ans.products)
-    })
-  }, [])
-
-  
-
+    api.getProductList().then((ans) => {
+      setData(ans.products);
+      setGoods(ans.products);
+    });
+  }, []);
 
   return (
     <>
-      <Header appHeandlerText={appHeandlerText} />
+      <Header
+        appHeandlerText={appHeandlerText}
+        modalActiv={modalActiv}
+        setModalActiv={setModalActiv}
+      />
       <main>
         <Routes>
-          <Route path="/" element={<Main name="Главная" />} /> 
-            <Route path="/catalog" element={<Catalog name="Каталог" request={request} amount={amount} data={data} />} />
-            <Route path="/favorites" element={<Favorites name="Избранное" />} />
-            <Route path="/cart" element={<Cart name="Корзина" />} />
-            <Route path="/product" element={<Product name="Товар" />} />
-            <Route path="/profile" element={<Profile name="Личный кабинет" />} />
-            <Route path="/contacts" element={<Contacts name="Контакты" />} />
+          <Route path='/' element={<Main name='Главная' />} />
+          <Route
+            path='/catalog'
+            element={
+              <Catalog
+                name='Каталог'
+                request={request}
+                amount={amount}
+                data={data}
+              />
+            }
+          />
+          <Route path='/favorites' element={<Favorites name='Избранное' />} />
+          <Route path='/cart' element={<Cart name='Корзина' />} />
+          <Route path='/product' element={<Product name='Товар' />} />
+          {/* <Route path="/profile" element={<Profile name="Личный кабинет" />} /> */}
+          {/* <Route
+            path='/profile/signup'
+            element={<SignUp name='Регистрация' />}
+          /> */}
+          {/* <Route path='/profile/signin' element={<SignIn name='Войти' />} /> */}
+          <Route path='/contacts' element={<Contacts name='Контакты' />} />
         </Routes>
       </main>
       <Footer />
+      <Modal active={modalActiv} changeActive={setModalActiv} />
     </>
   );
 };
