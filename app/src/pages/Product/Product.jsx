@@ -4,10 +4,26 @@ import api from "../../Api";
 import style from "./product.module.css";
 
 const Product = (props) => {
+  console.log(props.store);
   const { id } = useParams();
   const [product, setProduct] = useState({});
-
-  const setCart = (e) => {};
+  const setCart = (e) => {
+    let arr = [...props.store];
+    let flag = true;
+    console.log("id >>>>>> " + id);
+    arr.forEach((el) => {
+      console.log(el);
+      console.log(el.id);
+      if (el.id === id) {
+        el.cnt++;
+        flag = false;
+      }
+    });
+    if (flag) {
+      arr.push({ id: id, cnt: 1 });
+    }
+    props.setStore(arr);
+  };
 
   useEffect(() => {
     api.getSingleProduct(id).then((ans) => {
