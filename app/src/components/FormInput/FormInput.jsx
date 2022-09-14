@@ -2,13 +2,12 @@ import { useState } from "react";
 import "./FormInput.css";
 
 const FormInput = (props) => {
+  const [val, setVal] = useState(props.val || "");
 
-    const [val, setVal] = useState(props.val || "")
+  const changeVal = (e) => {
+    setVal(e.target.value);
+  };
 
-    const changeVal = (e) => {
-        setVal(e.target.value)
-    }
-    
   return (
     <input
       className='inp'

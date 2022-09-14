@@ -10,3 +10,7 @@
     background-color: #FFE44D;
     border-color: #FFE44D;
 }
+
+.modal__btnAuthLink {
+    width: 100%;
+}

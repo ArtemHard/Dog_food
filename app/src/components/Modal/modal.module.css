@@ -50,4 +50,10 @@
     top: 20px;
     cursor: pointer;
 }
+.link__modal_Auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 
