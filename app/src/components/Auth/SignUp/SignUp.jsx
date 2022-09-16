@@ -25,14 +25,14 @@ const SignUp = () => {
         <div className={style.modal__inner}>
           <h3 className={style.modal__inner__textLogIn}>Вход</h3>
           <input
-          className={style.modal__inner__input}
+            className={style.modal__inner__input}
             type='email'
             name='email'
             placeholder='Email'
             autoComplete='email'
           />
           <input
-           className={style.modal__inner__input}
+            className={style.modal__inner__input}
             type='password'
             name='password'
             placeholder='Пароль'
@@ -41,7 +41,7 @@ const SignUp = () => {
           <button className={style.modal__inner__btnConfirm} type='submit'>
             <strong>Зарегистрироваться</strong>
           </button>
-          <Link to='/profile/signin' className={style.modal__inner__link}>
+          <Link to='/signin' className={style.modal__inner__link}>
             <button className={style.modal__inner__btnReg} type='submit'>
               <strong>Войти</strong>
             </button>

@@ -1,10 +1,9 @@
-import SignIn from "../components/Auth/SignIn/SignIn"
-
 const Profile = (props) => {
+  return (
+    <>
+      <span> Profile </span>
+    </>
+  );
+};
 
-    return (
-        <SignIn />
-    )
-}
-
-export default Profile
+export default Profile;

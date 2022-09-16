@@ -21,33 +21,33 @@ const SignIn = () => {
 
   return (
     // <div className={style.wrapper}>
-      <form className={style.modal__form} onSubmit={submitHandler}>
-        <div className={style.modal__inner}>
-          <h3 className={style.modal__inner__textLogIn}>Вход</h3>
-          <input
+    <form className={style.modal__form} onSubmit={submitHandler}>
+      <div className={style.modal__inner}>
+        <h3 className={style.modal__inner__textLogIn}>Вход</h3>
+        <input
           className={style.modal__inner__input}
-            type='email'
-            name='email'
-            placeholder='Email'
-            autoComplete='email'
-          />
-          <input
+          type='email'
+          name='email'
+          placeholder='Email'
+          autoComplete='email'
+        />
+        <input
           className={style.modal__inner__input}
-            type='password'
-            name='password'
-            placeholder='Пароль'
-            autoComplete='off'
-          />
-          <button className={style.modal__inner__btnConfirm} type='submit'>
-            <strong>Войти</strong>
+          type='password'
+          name='password'
+          placeholder='Пароль'
+          autoComplete='off'
+        />
+        <button className={style.modal__inner__btnConfirm} type='submit'>
+          <strong>Войти</strong>
+        </button>
+        <Link to='/signup' className={style.modal__inner__link}>
+          <button className={style.modal__inner__btnReg} type='button'>
+            <strong>Регистрация</strong>
           </button>
-          <Link to='/profile/signup' className={style.modal__inner__link}>
-            <button className={style.modal__inner__btnReg} type='button'>
-              <strong>Регистрация</strong>
-            </button>
-          </Link>
-        </div>
-      </form>
+        </Link>
+      </div>
+    </form>
     // </div>
   );
 };

@@ -66,7 +66,7 @@ const App = () => {
             path='/product/:id'
             element={<Product store={store} setStore={setStore} name='Товар' />}
           />
-          {/* <Route path="/profile" element={<Profile name="Личный кабинет" />} /> */}
+          <Route path='/profile' element={<Profile name='Личный кабинет' />} />
           {/* <Route
             path='/profile/signup'
             element={<SignUp name='Регистрация' />}
