@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import api from "./Api";
-import SignIn from "./components/Auth/SignIn/SignIn";
-import SignUp from "./components/Auth/SignUp/SignUp";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Modal from "./components/Modal/Modal";
