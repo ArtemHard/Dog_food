@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import api from "./Api";
+import CreateProductForm from "./components/CreateProductForm/CreateProductForm";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Modal from "./components/Modal/Modal";
@@ -70,6 +71,10 @@ const App = () => {
             element={<SignUp name='Регистрация' />}
           /> */}
           {/* <Route path='/profile/signin' element={<SignIn name='Войти' />} /> */}
+          <Route
+            path='/createproduct'
+            element={<CreateProductForm name='Создать товар' />}
+          />
           <Route path='/contacts' element={<Contacts name='Контакты' />} />
         </Routes>
       </main>

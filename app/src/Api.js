@@ -25,6 +25,16 @@ class Api {
       },
     }).then(responseHandler);
   }
+  /*
+  createProduct(data) {
+    return fetch(`${this.path}products`, {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${this.token}`,
+        "Content-Type": JSON.stringify(data)
+      },
+    })
+  }*/
 }
 
 const api = new Api(PATH, API_TOKEN);

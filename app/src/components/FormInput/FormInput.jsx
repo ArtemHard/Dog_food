@@ -1,12 +1,13 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./FormInput.css";
 
 const FormInput = (props) => {
-  const [val, setVal] = useState(props.val || "");
-
-  const changeVal = (e) => {
-    setVal(e.target.value);
-  };
+  // console.log(props.val);
+  // const [val, setVal] = useState(props.val || "");
+  // const nameOfinput = props.name;
+  // const changeVal = (e) => {
+  //   setVal(e.target.value);
+  // };
 
   return (
     <input
@@ -14,8 +15,8 @@ const FormInput = (props) => {
       name={props.name}
       placeholder={props.text}
       type={props.type}
-      value={val}
-      onChange={changeVal}
+      // value={val}
+      // onChange={changeVal}
     />
   );
 };

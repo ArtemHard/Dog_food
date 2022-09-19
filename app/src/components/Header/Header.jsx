@@ -72,6 +72,13 @@ const Header = ({
           >
             SignUp
           </Link>
+          <Link
+            to='/createproduct'
+            // className={style.navigation__btn__signUp}
+            // onClick={SignInHeandler}
+          >
+            CreateProduct
+          </Link>
         </nav>
       </div>
     </header>

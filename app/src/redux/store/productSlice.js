@@ -7,18 +7,16 @@ const productSlice = createSlice({
   },
   reducers: {
     createProduct(state, action) {
-      console.log(state);
-      console.log(action);
-      state.products.push({
-        available: action.payload.available, // boolean
-        pictures: action.payload.pictures, // string
-        name: action.payload.name, // string, обязательное
-        price: action.payload.price, // number, обязательное
-        discount: action.payload.discount, // number
-        stock: action.payload.discount, // number
-        wight: action.payload.wight, // string
-        description: action.payload.description, // string, обязательное
-      });
+      // console.log(state);
+
+      action.payload.available = Boolean(action.payload.available);
+      action.payload.price = Number(action.payload.price); // number, обязательное
+      action.payload.discount = Number(action.payload.discount); // number
+      action.payload.stock = Number(action.payload.stock); // number
+
+      console.log(JSON.stringify(action.payload));
+
+      state.products.push(action.payload);
     },
     editProduct(state, action) {},
     deleteProduct(state, action) {},

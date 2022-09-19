@@ -1,7 +1,9 @@
 import React from "react";
 import Counter from "../Counter/Counter";
 import "./Card.css";
-
+/*
+import { useSelector } from "react-redux";
+const products = useSelector(state => state.products.products)*/
 const Card = (props) => {
   return (
     <div className='card'>
