@@ -12,30 +12,32 @@ import Favorites from "./pages/Favorites";
 import Main from "./pages/Main";
 import Product from "./pages/Product/Product";
 import Profile from "./pages/Profile";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { fetchProducts } from "./redux/store/productSlice";
 
 const App = () => {
-  const [goods, setGoods] = useState([]);
-  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+
   const [request, setRequest] = useState("");
   const [amount, setAmount] = useState("");
   const [modalActiv, setModalActiv] = useState(false);
   const [store, setStore] = useState([]);
 
+  const products = useSelector((state) => state.products.products);
+
   const appHeandlerText = (textFromSearchForm) => {
-    const newCards = goods.filter((el) =>
+    const newCards = products.filter((el) =>
       el.name.toLowerCase().includes(textFromSearchForm.toLowerCase().trim())
     );
     setRequest(textFromSearchForm);
     setAmount(newCards.length);
-    setData(newCards);
+    // setData(newCards);
   };
 
   useEffect(() => {
-    api.getProductList().then((ans) => {
-      setData(ans.products);
-      setGoods(ans.products);
-    });
-  }, []);
+    dispatch(fetchProducts());
+  }, [dispatch]);
 
   return (
     <>
@@ -55,7 +57,7 @@ const App = () => {
                 name='Каталог'
                 request={request}
                 amount={amount}
-                data={data}
+                // data={data}
               />
             }
           />
