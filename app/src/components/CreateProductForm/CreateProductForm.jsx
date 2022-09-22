@@ -1,10 +1,12 @@
 import React from "react";
 import Button from "../Elements/Buttons/Button";
 import FormInput from "../FormInput/FormInput";
-import { useDispatch } from "react-redux";
-import { createProduct } from "../../redux/store/productSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { createNewProduct } from "../../redux/store/productSlice";
 
 const CreateProductForm = () => {
+  const { status, error } = useSelector((state) => state.products);
+
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
@@ -12,8 +14,11 @@ const CreateProductForm = () => {
 
     const formData = Object.fromEntries(new FormData(e.target).entries());
 
-    dispatch(createProduct(formData));
+    dispatch(createNewProduct(formData));
     e.target.reset();
+    if (status === "created") {
+      alert("Товар успешно создан");
+    }
   };
 
   return (
@@ -27,6 +32,8 @@ const CreateProductForm = () => {
       }}
       onSubmit={submitHandler}
     >
+      {status === "creating" && <h2>Создаю товар...</h2>}
+      {error && <h2>An error occured: {error}</h2>}
       <FormInput name='available' text='available' type='text' />
       <FormInput name='pictures' text='pictures' type='text' />
       <FormInput name='name' text='name' type='text' />
