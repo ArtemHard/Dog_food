@@ -3,7 +3,7 @@ import { API_TOKEN, PATH } from "../../constants";
 
 export const deleteProduct = createAsyncThunk(
   "product/deleteProduct",
-  async function (_id, { rejectWithValue, dispatch }) {
+  async function (_id, { rejectWithValue, dispatch, getState }) {
     try {
       const response = await fetch(PATH + "products/" + _id, {
         method: "DELETE",
@@ -12,7 +12,6 @@ export const deleteProduct = createAsyncThunk(
         },
       });
 
-      console.log(response);
       if (!response.ok) {
         throw new Error(
           `Cant' delete becouse: Ошибка ${response.status} потому-что ${response.statusText}`
@@ -60,7 +59,6 @@ export const createNewProduct = createAsyncThunk(
   "products/createNewProduct",
   async function (dataFromForm, { rejectWithValue, dispatch }) {
     try {
-      console.log({ dataFromForm });
       dataFromForm.available = Boolean(dataFromForm.available);
       dataFromForm.price = Number(dataFromForm.price);
       dataFromForm.discount = Number(dataFromForm.discount);
@@ -79,7 +77,7 @@ export const createNewProduct = createAsyncThunk(
         );
       }
       const data = await response.json();
-      return data;
+      dispatch(createProduct(data));
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -94,11 +92,13 @@ const productSlice = createSlice({
     error: null,
   },
   reducers: {
-    createProduct(state, action) {},
+    createProduct(state, action) {
+      state.products.push(action.payload);
+    },
     editProduct(state, action) {},
     deleteProductId(state, action) {
       state.products = state.products.filter(
-        (product) => product._id !== action.payload._id // не работает
+        (product) => product._id !== action.payload
       );
     },
     likeProduct(state, action) {},
@@ -126,8 +126,8 @@ const productSlice = createSlice({
       state.error = null;
     },
     [createNewProduct.fulfilled]: (state, action) => {
-      state.status = "created";
-      state.products = action.payload.products;
+      state.status = "resolved";
+      // state.products = action.payload;
     },
     [createNewProduct.rejected]: setError,
   },

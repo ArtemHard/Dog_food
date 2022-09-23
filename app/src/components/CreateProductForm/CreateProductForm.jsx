@@ -6,7 +6,6 @@ import { createNewProduct } from "../../redux/store/productSlice";
 
 const CreateProductForm = () => {
   const { status, error } = useSelector((state) => state.products);
-
   const dispatch = useDispatch();
 
   const submitHandler = (e) => {
@@ -16,9 +15,6 @@ const CreateProductForm = () => {
 
     dispatch(createNewProduct(formData));
     e.target.reset();
-    if (status === "created") {
-      alert("Товар успешно создан");
-    }
   };
 
   return (

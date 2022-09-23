@@ -6,7 +6,7 @@ import style from "./product.module.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const Product = (props) => {
-  console.log(props.store);
+  // console.log(props.store);
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
@@ -30,7 +30,7 @@ const Product = (props) => {
 
   useEffect(() => {
     api.getSingleProduct(id).then((ans) => {
-      console.log(ans);
+      // console.log(ans);
       setProduct(ans);
     });
   }, []);
